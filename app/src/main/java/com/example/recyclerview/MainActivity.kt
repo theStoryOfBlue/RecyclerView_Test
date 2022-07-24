@@ -3,6 +3,7 @@ package com.example.recyclerview
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclerview.databinding.ActivityMainBinding
@@ -33,7 +34,13 @@ class MainActivity : AppCompatActivity() {
         val adapter=Adapter() //어댑터 객체 만듦
         adapter.datalist = mDatas //데이터 넣어줌
         binding.recycler.adapter=adapter //리사이클러뷰에 어댑터 연결
-        binding.recycler.layoutManager= LinearLayoutManager(this).also{it.orientation = LinearLayoutManager.HORIZONTAL} //레이아웃 매니저 연결
+//        val layoutManager = LinearLayoutManager(requireContext())
+//        binding.recycler.layoutManager = layoutManager
+//
+//        val centerOfScreen = binding.recycler.width / 2
+//        layoutManager.scrollToPositionWithOffset( 5 , centerOfScreen) //itemPosition - 이동시키고자 하는 item Position
+
+//        binding.recycler.layoutManager= LinearLayoutManager(this).also{it.orientation = LinearLayoutManager.HORIZONTAL} //레이아웃 매니저 연결
 //        binding.recycler.layoutManager = LinearLayoutManager(t)
     }
 
